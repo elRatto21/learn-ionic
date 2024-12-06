@@ -1,0 +1,53 @@
+#battery-card-header {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    ion-badge {
+        color: white;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-radius: 100px;
+    }
+}
+
+#battery-card-content {
+    margin-top: 10px;
+
+    #battery-status {
+        height: 15px;
+        border-radius: 10px;
+    }
+
+    #battery-status-label {
+        width: 100%;
+        display: block;
+        text-align: end;
+    }
+}
+
+#network-card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7.5px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    ion-icon {
+        font-size: 48px;
+    }
+}
