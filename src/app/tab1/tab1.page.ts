@@ -11,7 +11,7 @@ import { ToastController } from '@ionic/angular';
   imports: [IonicModule, FormsModule],
 })
 export class Tab1Page {
-  text: string = 'dwda';
+  text: string = '';
   size: string = '5';
   color: string = 'black';
 
