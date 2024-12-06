@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+
+  <ion-item lines="full">
+    <ion-input label="Text" labelPlacement="stacked" [value]="text" placeholder="Type here..."></ion-input>
+  </ion-item>
+
+  <ion-button (click)="test()">test</ion-button>
+
+  <ion-range [min]="0" [max]="10" [step]="1" [ticks]="true"></ion-range>
+
+  <ion-select label="Farbe" (ionChange)="handleChange($event)">
+    <ion-select-modal>
+      <ion-select-option value="red">Rot</ion-select-option>
+      <ion-select-option value="green">Grün</ion-select-option>
+      <ion-select-option value="blue">Blau</ion-select-option>
+    </ion-select-modal>
+  </ion-select>
+
+  <ion-text>{{ text }} dawdad</ion-text>
+
+</ion-content>
