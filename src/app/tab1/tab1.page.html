@@ -1,21 +1,25 @@
 <ion-content [fullscreen]="true">
 
-  <ion-item lines="full">
-    <ion-input label="Text" labelPlacement="stacked" [value]="text" placeholder="Type here..."></ion-input>
-  </ion-item>
+  <div class="input-container">
+    <ion-item lines="full">
+      <ion-input label="Text" labelPlacement="stacked" [(ngModel)]="text" placeholder="Type here..."></ion-input>
+    </ion-item>
 
-  <ion-button (click)="test()">test</ion-button>
+    <ion-item lines="full">
+      <ion-select label="Farbe" [(ngModel)]="color" (ionChange)="sendToast($event)">
+        <ion-select-modal>
+          <ion-select-option value="red">Rot</ion-select-option>
+          <ion-select-option value="green">Grün</ion-select-option>
+          <ion-select-option value="blue">Blau</ion-select-option>
+        </ion-select-modal>
+      </ion-select>
+    </ion-item>
 
-  <ion-range [min]="0" [max]="10" [step]="1" [ticks]="true"></ion-range>
+    <ion-range [min]="0" [max]="10" [step]="1" [ticks]="true" [snaps]="true" [(ngModel)]="size"></ion-range>
+  </div>
 
-  <ion-select label="Farbe" (ionChange)="handleChange($event)">
-    <ion-select-modal>
-      <ion-select-option value="red">Rot</ion-select-option>
-      <ion-select-option value="green">Grün</ion-select-option>
-      <ion-select-option value="blue">Blau</ion-select-option>
-    </ion-select-modal>
-  </ion-select>
-
-  <ion-text>{{ text }} dawdad</ion-text>
+  <div class="text-container">
+    <ion-text [style.fontSize]="calcSize()" [style.color]="color">{{ text }}dwd</ion-text>
+  </div>
 
 </ion-content>

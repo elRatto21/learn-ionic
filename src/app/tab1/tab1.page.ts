@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 
@@ -7,26 +8,26 @@ import { ToastController } from '@ionic/angular';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonicModule],
+  imports: [IonicModule, FormsModule],
 })
 export class Tab1Page {
-  text: string = '';
+  text: string = 'dwda';
+  size: string = '5';
+  color: string = 'black';
 
   constructor(private toastController: ToastController) { }
 
-  test() {
-    console.log("text", this.text);
+  calcSize() {
+    return (8 * Number(this.size)) + "px"
   }
 
-  async handleChange(e: any) {
-    console.log("change", e.detail.value)
+  async sendToast(e: any) {
     const toast = await this.toastController.create({
-      message: "Color changed successfully",
+      message: `Changed text color to ${e.detail.value}.`,
       duration: 1500,
-      position: 'top',
+      position: 'top'
     })
 
     await toast.present();
   }
-
 }
