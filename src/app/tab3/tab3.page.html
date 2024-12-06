@@ -1,2 +1,18 @@
 <ion-content [fullscreen]="true">
+  <ion-button (click)="reload()">Load data</ion-button>
+
+  <ion-list>
+    <ion-list-header>Test</ion-list-header>
+
+    <ion-item-group *ngFor="let category of categories">
+      <ion-item-divider *ngIf="getFoodsByCategorie(category.id).length > 0">
+        <ion-label>{{ category.name }}</ion-label>
+      </ion-item-divider>
+
+      <ion-item *ngFor="let food of getFoodsByCategorie(category.id)">
+        {{ food.name }}
+        {{ food.score }}
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
 </ion-content>
